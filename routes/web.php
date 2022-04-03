@@ -15,39 +15,11 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/dn', function () {
-    return view('dn');
+Route::get('/{id}', function ($id) {
+    return view($id);
 });
-Route::get('/shop', function () {
-    return view('shop');
-});
-Route::get('/shop-detail', function () {
-    return view('shop-detail');
-});
-Route::get('/master', function () {
-    return view('master');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/index', function () {
-    return view('index');
-});
-Route::get('/checkout', function () {
-    return view('checkout');
-});
-Route::get('/cart', function () {
-    return view('cart');
-});
-Route::get('/wishlist', function () {
-    return view('wishlist');
-});
-Route::get('/index', function () {
-    return view('my-account');
-});
+
+/*
 Route::post('/formdelete', function () {
     return view('formdelete ');
 });
@@ -57,3 +29,4 @@ Route::get('/demo/name={name}&pass={pass}', function ($name) {
 Route::get('/',[MyController::class,'index']);
 Route::post('signup', [MyController::class,'signup']);
 Route::resource('product',ProductController::class);
+*/
