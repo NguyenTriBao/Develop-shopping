@@ -16,17 +16,17 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="{{asset('image/x-icon')}}">
+    <link rel="apple-touch-icon" href="{{asset('images/apple-touch-icon.png')}}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -86,9 +86,9 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#">My Account</a></li>
+                            <li><a href="{{asset('my-account')}}">My Account</a></li>
                             <li><a href="#">Our location</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="{{asset('contact')}}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -125,10 +125,10 @@
                                             <h6 class="title">Top</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="shop.html">Jackets</a></li>
-                                                    <li><a href="shop.html">Shirts</a></li>
-                                                    <li><a href="shop.html">Sweaters & Cardigans</a></li>
-                                                    <li><a href="shop.html">T-shirts</a></li>
+                                                    <li><a href="{{asset('shop')}}">Jackets</a></li>
+                                                    <li><a href="{{asset('shop')}}">Shirts</a></li>
+                                                    <li><a href="{{asset('shop')}}">Sweaters & Cardigans</a></li>
+                                                    <li><a href="{{asset('shop')}}">T-shirts</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -137,10 +137,10 @@
                                             <h6 class="title">Bottom</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="shop.html">Swimwear</a></li>
-                                                    <li><a href="shop.html">Skirts</a></li>
-                                                    <li><a href="shop.html">Jeans</a></li>
-                                                    <li><a href="shop.html">Trousers</a></li>
+                                                    <li><a href="{{asset('shop')}}">Swimwear</a></li>
+                                                    <li><a href="{{asset('shop')}}">Skirts</a></li>
+                                                    <li><a href="{{asset('shop')}}">Jeans</a></li>
+                                                    <li><a href="{{asset('shop')}}">Trousers</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -149,10 +149,10 @@
                                             <h6 class="title">Clothing</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="shop.html">Top Wear</a></li>
-                                                    <li><a href="shop.html">Party wear</a></li>
-                                                    <li><a href="shop.html">Bottom Wear</a></li>
-                                                    <li><a href="shop.html">Indian Wear</a></li>
+                                                    <li><a href="{{asset('shop')}}">Top Wear</a></li>
+                                                    <li><a href="{{asset('shop')}}">Party wear</a></li>
+                                                    <li><a href="{{asset('shop')}}">Bottom Wear</a></li>
+                                                    <li><a href="{{asset('shop')}}">Indian Wear</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -160,10 +160,10 @@
                                             <h6 class="title">Accessories</h6>
                                             <div class="content">
                                                 <ul class="menu-col">
-                                                    <li><a href="shop.html">Bags</a></li>
-                                                    <li><a href="shop.html">Sunglasses</a></li>
-                                                    <li><a href="shop.html">Fragrances</a></li>
-                                                    <li><a href="shop.html">Wallets</a></li>
+                                                    <li><a href="{{asset('shop')}}">Bags</a></li>
+                                                    <li><a href="{{asset('shop')}}">Sunglasses</a></li>
+                                                    <li><a href="{{asset('shop')}}">Fragrances</a></li>
+                                                    <li><a href="{{asset('shop')}}">Wallets</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -180,7 +180,7 @@
                                 <li><a href="{{asset('checkout')}}">Checkout</a></li>
                                 <li><a href="{{asset('my-account')}}">My Account</a></li>
                                 <li><a href="{{asset('wishlist')}}">Wishlist</a></li>
-                                <li><a href="{{asset('shop-detail')}}">Shop Detail</a></li>
+                                <li><a href="{{asset('detail')}}">Shop Detail</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{asset('service')}}">Our Service</a></li>
@@ -314,23 +314,23 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- ALL PLUGINS -->
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/baguetteBox.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{asset('js/jquery.superslides.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap-select.js')}}"></script>
+    <script src="{{asset('js/inewsticker.js')}}"></script>
+    <script src="{{asset('js/bootsnav.js.')}}"></script>
+    <script src="{{asset('js/images-loded.min.js')}}"></script>
+    <script src="{{asset('js/isotope.min.js')}}"></script>
+    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/baguetteBox.min.js')}}"></script>
+    <script src="{{asset('js/jquery-ui.js')}}"></script>
+    <script src="{{asset('js/jquery.nicescroll.min.js')}}"></script>
+    <script src="{{asset('js/form-validator.min.js')}}"></script>
+    <script src="{{asset('js/contact-form-script.js')}}"></script>
+    <script src="{{asset('js/custom.js')}}"></script>
 </body>
 
 </html>

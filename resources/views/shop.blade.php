@@ -579,6 +579,4 @@
 
 </body>
 
-</html>
-
 @endsection
