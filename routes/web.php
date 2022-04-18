@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MyController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +14,10 @@ use App\Http\Controllers\ProductController;
 |
 */
 
+/*
 Route::get('/{id}', function ($id) {
     return view($id);
 });
-
-/*
-Route::post('/formdelete', function () {
-    return view('formdelete ');
-});
-Route::get('/demo/name={name}&pass={pass}', function ($name) {
-    return view('demo');
-})->middleware('checklogin');
-Route::get('/',[MyController::class,'index']);
-Route::post('signup', [MyController::class,'signup']);
-Route::resource('product',ProductController::class);
 */
+
+Route::get('/', [Controllers::class,'index']);

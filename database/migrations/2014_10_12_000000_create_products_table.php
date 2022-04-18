@@ -20,8 +20,9 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('manu_id');
             $table->integer('type_id');
-            $table->integer('amount');
-            $table->string('description');     
+            $table->integer('quantity');
+            $table->string('description');
+            $table->timestamps();  
         });
     }
 
