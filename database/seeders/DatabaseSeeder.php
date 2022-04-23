@@ -15,7 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('protypes')->insert([
-            ['type_name' => 'Áo']
+            ['type_name' => 'Áo'],
+            ['type_name' => 'Quần'],
+            ['type_name' => 'Ví'],
+            ['type_name' => 'Giày'],
+            ['type_name' => 'Giỏ xách']
         ]);
         DB::table('manufactures')->insert([
             ['manu_name' => 'Gucci']

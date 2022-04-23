@@ -17,7 +17,8 @@
             </div>
         </div>
     </div>
-    <!-- End All Title Box -->
+
+    <!-- End All Title Box a -->
 
     <!-- Start Shop Detail  -->
     <div class="shop-detail-box-main">
