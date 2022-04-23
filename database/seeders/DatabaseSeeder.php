@@ -22,8 +22,11 @@ class DatabaseSeeder extends Seeder
             ['type_name' => 'Giỏ xách']
         ]);
         DB::table('manufactures')->insert([
-            ['manu_name' => 'Gucci']
-
+            ['manu_name' => 'Gucci'],
+            ['manu_name' => 'Louis Vuitton'],
+            ['manu_name' => 'Dior'],
+            ['manu_name' => 'Hermès'],
+            ['manu_name' => 'Chanel']
         ]);
         DB::table('products')->insert([
             ['name' => 'Áo Polo',
