@@ -82,6 +82,46 @@ class DatabaseSeeder extends Seeder
             'quantity' => '2',
             'description' => 'Áo polo rất đẹp'],
 
+            ['name' => 'Giày nam Gucci Ace họa tiết kẻ xanh sẫm GNGC13',
+            'image' => 'giaygucci.jpg',
+            'price' => '2.190.000',
+            'manu_id' => '1',
+            'type_id' => '4',
+            'quantity' => '1',
+            'description' => 'Giày nam Gucci xịn'],
+
+            ['name' => 'Túi xách nam Louis Vuitton like au họa tiết caro ghi đen TXLV16',
+            'image' => 'tuigucci.jpg',
+            'price' => '3.990.000',
+            'manu_id' => '2',
+            'type_id' => '5',
+            'quantity' => '1',
+            'description' => 'túi nam rộng rãi '],
+
+            ['name' => 'Giày nam Dior x Air Jordan 1 High CN8607-002',
+            'image' => 'giaydior.jpg',
+            'price' => '319.000.000',
+            'manu_id' => '3',
+            'type_id' => '4',
+            'quantity' => '1',
+            'description' => 'Giày thoáng mát '],
+
+            ['name' => 'DAYDREAM SNEAKER',
+            'image' => 'sneaker.jpg',
+            'price' => '25.000.000',
+            'manu_id' => '4',
+            'type_id' => '4',
+            'quantity' => '1',
+            'description' => 'Giày thoáng siêu trắng '],
+
+            ['name' => 'Túi Hermes Picotin 18 Blue Frida Rose Mexico Khóa Bạc',
+            'image' => 'tuihermes.jpg',
+            'price' => '88,000,000',
+            'manu_id' => '4',
+            'type_id' => '5',
+            'quantity' => '1',
+            'description' => 'Túi đa dụng '],
+
         ]);
 
     }
