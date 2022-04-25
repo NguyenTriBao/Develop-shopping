@@ -121,7 +121,47 @@ class DatabaseSeeder extends Seeder
             'type_id' => '5',
             'quantity' => '1',
             'description' => 'Túi đa dụng '],
+            
+            ['name' => 'Giày Gucci Ong “Black Bee”',
+            'image' => 'giay-gucci-ong-black-bee-sieu-cap-like-authentic-19-1.jpg',
+            'price' => '98,000,000',
+            'manu_id' => '1',
+            'type_id' => '4',
+            'quantity' => '2',
+            'description' => 'giày gucci ong black bee siêu cấp like authentic '],
 
+            ['name' => 'Ví Dior Homme Bee Bifold Wallet Màu Đen”',
+            'image' => 'vi-dior-homme-bee-bifold-wallet-mau-den-620c7fdcc0f78-16022022113852.jpg',
+            'price' => '68,000,000',
+            'manu_id' => '3',
+            'type_id' => '3',
+            'quantity' => '1',
+            'description' => 'Ví Dior Homme Bee Bifold Wallet Màu Đen là chiếc ví dành cho nam đến từ thương hiệu Dior nổi tiếng. Sở hữu gam màu đen thanh lịch, cùng chất liệu cao cấp chiếc ví Dior Homme Bee Bifold Wallet được nhiều tín đồ thời trang săn đón. '],
+           
+            ['name' => 'Quần Jean Hermes Nam',
+            'image' => '15242358339.jpg_resize400x400.jpg',
+            'price' => '57,000,000',
+            'manu_id' => '4',
+            'type_id' => '2',
+            'quantity' => '1',
+            'description' => 'Mang lại cho người mặc sự thoải mái, trẻ trung,Chất liệu jeans mềm mại, kiểu dáng sang trọng làm tôn lên vẻ lịch lãm, sang trọng'],
+
+            ['name' => 'Túi Xách Chanel Coco Mini Đen',
+            'image' => 'tui-xach-chanel-coco-den-size-225-0-560.jpg',
+            'price' => '34,000,000',
+            'manu_id' => '5',
+            'type_id' => '5',
+            'quantity' => '1',
+            'description' => ' Chất liệu da chính hãng. form dáng chuẩn auth.
+             Cam kết hàng VVIP sao chép tỉ mĩ, tinh xảo, chất lượng '],
+ 
+          ['name' => 'Áo thun thời trang siêu cấp Louis Vuitton',
+            'image' => 'd136b4ba68a95a69399a275782207d3dd0f06605_0.jpg',
+            'price' => '33,000,000',
+            'manu_id' => '2',
+            'type_id' => '1',
+            'quantity' => '1',
+            'description' => 'Xa xỉ, đẳng cấp, thời thượng và đắt đỏ là những mỹ từ dành cho thương hiệu thời trang đình đám thế giới Louis Vuitton (LV).'],
         ]);
 
     }
