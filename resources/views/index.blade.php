@@ -104,7 +104,7 @@
                 <div class="col-lg-12">
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
+                            <button class="active" data-filter=".all">All</button>
                             <button data-filter=".top-featured">Top featured</button>
                             <button data-filter=".best-seller">Best seller</button>
                         </div>
@@ -113,14 +113,14 @@
             </div>
 
             <div class="row special-list"> 
-            @foreach($data as $row)
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
+            @foreach ($products as $row)
+                <div class="col-lg-3 col-md-6 special-grid all">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="images/{{$row->image}}" class="img-fluid" alt="Image">
+                            <img src="images/{{$row['image']}}" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -132,17 +132,77 @@
                         </div>
                         <div class="why-text">
                             <h4>{{$row->name}}</h4>
-                            <h5>{{$row->price}}</h5>
-                            <h1>{{$row->manufacture->manu_name}}</h1>
-
-                            
+                            <h5>{{number_format($row->price).' vnđ'}}</h5>          
                         </div>
                     </div>
                 </div>
             @endforeach
+
+            @foreach ($productsList as $row)
+                <div class="col-lg-3 col-md-6 special-grid top-featured">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="images/{{$row['image']}}" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>{{$row->name}}</h4>
+                            <h5>{{number_format($row->price).' vnđ'}}</h5>          
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+            @foreach ($products as $row)
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="images/{{$row['image']}}" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>{{$row->name}}</h4>
+                            <h5>{{number_format($row->price).' vnđ'}}</h5>          
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <div class="row special-list">
                 
             </div>
+            
         </div>
+        <div class="pagination_home">
+                {!! $products->render() !!}
+                </div>
+                <style>
+                    .w-5{
+                        display: none
+                    }
+                    .pagination_home{
+                        text-align: right
+                    }
+                </style>
     </div>
     <!-- End Products  -->
 

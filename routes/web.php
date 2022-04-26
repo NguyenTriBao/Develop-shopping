@@ -14,7 +14,9 @@ use App\Http\Controllers\Controllers;
 |
 */
 
-Route::get('/', [Controllers::class,'index']);
+Route::group(['prefix' => ''], function () {
+    Route::get('/', [Controllers::class,'get10Product','index']);
+});
 
 Route::get('/welcome', function () {
     return view('welcome');
