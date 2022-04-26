@@ -13,9 +13,15 @@ use App\Http\Controllers\Controllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
+Route::get('/{id}', function ($id) {
+    return view($id);
+});
+*/
 Route::group(['prefix' => ''], function () {
-    Route::get('/', [Controllers::class,'get10Product','index']);
+    Route::get('/', [Controllers::class,'index']);
+    Route::get('/add-to-cart/{id}', [Controllers::class,'addCart'])->name('addToCart');
+    Route::get('/cart', [Controllers::class,'showCart'])->name('showCart');
 });
 
 Route::get('/welcome', function () {

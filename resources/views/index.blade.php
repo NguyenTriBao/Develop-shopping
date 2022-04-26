@@ -112,7 +112,9 @@
                 </div>
             </div>
 
-            <div class="row special-list"> 
+            <div class="row special-list">
+            <form action="" method="POST">
+                {{ csrf_field() }}
             @foreach ($products as $row)
                 <div class="col-lg-3 col-md-6 special-grid all">
                     <div class="products-single fix">
@@ -127,7 +129,7 @@
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <a class="cart add_to_cart" data-url="{{route('addToCart',['id' => $row->id])}}" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
@@ -138,7 +140,7 @@
                 </div>
             @endforeach
 
-            @foreach ($productsList as $row)
+            @foreach ($products as $row)
                 <div class="col-lg-3 col-md-6 special-grid top-featured">
                     <div class="products-single fix">
                         <div class="box-img-hover">
@@ -152,7 +154,7 @@
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <a class="cart add_to_cart" data-url="{{route('addToCart',['id' => $row->id])}}" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
@@ -162,6 +164,7 @@
                     </div>
                 </div>
             @endforeach
+            
 
             @foreach ($products as $row)
                 <div class="col-lg-3 col-md-6 special-grid best-seller">
@@ -177,9 +180,8 @@
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
+                                <a class="cart add_to_cart" data-url="{{route('addToCart',['id' => $row->id])}}" href="#">Add to Cart</a>
                             </div>
-                        </div>
                         <div class="why-text">
                             <h4>{{$row->name}}</h4>
                             <h5>{{number_format($row->price).' vnđ'}}</h5>          
@@ -187,6 +189,7 @@
                     </div>
                 </div>
             @endforeach
+            </form>
             <div class="row special-list">
                 
             </div>

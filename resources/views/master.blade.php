@@ -331,6 +331,28 @@
     <script src="{{asset('js/form-validator.min.js')}}"></script>
     <script src="{{asset('js/contact-form-script.js')}}"></script>
     <script src="{{asset('js/custom.js')}}"></script>
+    <script>
+        function addToCart(event){
+            event.preventDefault();
+            let urlget = $(this).data('url');
+            $.ajax({
+                type: "GET",
+                url: urlget,
+                dataType : 'json',
+                success: function (data){
+                    if (data.code === 200){
+                        alert('them san pham thanh cong ')
+                    }
+                },
+                error : function (){
+
+                }
+            });
+        }
+        $(function () {
+            $('.add_to_cart').on('click', addToCart);
+        });
+    </script>
 </body>
 
 </html>
