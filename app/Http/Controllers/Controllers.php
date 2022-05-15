@@ -60,4 +60,8 @@ class Controllers extends Controller
     public function insertform(){
         return view('insert');
     }
+    public function product(Product $id){
+        $data = $id;
+        return view('detail', compact(['data']));
+    }
 }

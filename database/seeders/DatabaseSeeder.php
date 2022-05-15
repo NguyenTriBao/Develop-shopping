@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('products')->insert([
             ['name' => 'Wool double-breasted jacket',
-            'image' => 'Wooldouble-breastedjacket.img',
+            'image' => 'Wooldouble-breastedjacket.png',
             'price' => '94166750',
             'manu_id' => '1',
             'type_id' => '1',
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
 
 
             ['name' => 'Knit striped cotton jumper',
-            'image' => 'Knitstripedcottonjumper.img',
+            'image' => 'Knitstripedcottonjumper.png',
             'price' => '33302875',
             'manu_id' => '1',
             'type_id' => '1',
@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
 
 
             ['name' => 'BELTED PARKA',
-            'image' => 'BELTEDPARKA.img',
+            'image' => 'BELTEDPARKA.png',
             'price' => '98000000',
             'manu_id' => '1',
             'type_id' => '1',
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
 
 
             ['name' => 'SLENDER WALLET',
-            'image' => 'SLENDERWALLET',
+            'image' => 'SLENDERWALLET.png',
             'price' => '11024400',
             'manu_id' => '2',
             'type_id' => '3',
@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
 
 
             ['name' => 'TWIST BELT CHAIN WALLET',
-            'image' => 'TWISTBELTCHAINWALLET.img',
+            'image' => 'TWISTBELTCHAINWALLET.png',
             'price' => '45016300',
             'manu_id' => '2',
             'type_id' => '3',
