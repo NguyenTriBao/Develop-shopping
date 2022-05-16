@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <!-- End All Title Box -->
+    <!-- End All Title Boxes -->
 
     <!-- Start About Page  -->
     <div class="about-box-main">
