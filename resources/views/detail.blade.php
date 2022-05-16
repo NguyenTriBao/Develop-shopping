@@ -25,32 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-6">
-                    <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"> <img class="d-block w-100" src="{{$data->image}}" alt="First slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="{{$data->image}}" alt="Second slide"> </div>
-                            <div class="carousel-item"> <img class="d-block w-100" src="{{$data->image}}" alt="Third slide"> </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev"> 
-						<i class="fa fa-angle-left" aria-hidden="true"></i>
-						<span class="sr-only">Previous</span> 
-					</a>
-                        <a class="carousel-control-next" href="#carousel-example-1" role="button" data-slide="next"> 
-						<i class="fa fa-angle-right" aria-hidden="true"></i> 
-						<span class="sr-only">Next</span> 
-					</a>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-1" data-slide-to="0" class="active">
-                                <img class="d-block w-100 img-fluid" src="{{$data->image}}" alt="" />
-                            </li>
-                            <li data-target="#carousel-example-1" data-slide-to="1">
-                                <img class="d-block w-100 img-fluid" src="{{$data->image}}" alt="" />
-                            </li>
-                            <li data-target="#carousel-example-1" data-slide-to="2">
-                                <img class="d-block w-100 img-fluid" src="{{$data->image}}" alt="" />
-                            </li>
-                        </ol>
-                    </div>
+                <img src="images/{{$data->image}}" class="img-fluid" alt="Image">
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-6">
                     <div class="single-product-details">
@@ -107,7 +82,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row my-5">
                 <div class="col-lg-12">
                     <div class="title-all text-center">

@@ -12,6 +12,15 @@ use DB;
 class Controllers extends Controller
 {
 
+    function AuthLogin(){
+        $admin_id = Session::get('admin_id');
+        if($admin_id){
+            return Redirect::to('dashboard');
+
+        }else{
+            return Redirect::to('welcome')->send();
+        }
+    }
     function index(){
         $manufacture = Manufacture::all();
         $products = Product::paginate(4);
@@ -21,11 +30,22 @@ class Controllers extends Controller
     }
     function shop(){
         $manufacture = Manufacture::all();
-        $products = Product::paginate(4);
+        $products = Product::all();
         $protype = Protype::all();
         //return view('index',['data'=>$products]);
-        return view('shop')->with(compact('manufacture'));
+        return view('shop',
+        [
+            'product'=>$products,
+            'manufacture'=>$manufacture
+        ]);
     }
+    // function shop(){
+    //     $manufacture = Manufacture::all();
+    //     $products = Product::paginate(4);
+    //     $protype = Protype::all();
+    //     //return view('index',['data'=>$products]);
+    //     return view('shop')->with(compact('manufacture'));
+    // }
     function get10Product(){
         $productsList = Product::orderBy('id', 'DESC')->get();
         return view('index')->with(compact('productsList'));
