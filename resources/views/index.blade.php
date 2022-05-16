@@ -122,7 +122,7 @@
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="{{$row->image}}" class="img-fluid" alt="Image">
+                            <img src="images/{{$row->image}}" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="{{ route('detail', ['id'=>$row->id]) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>

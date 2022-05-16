@@ -19,6 +19,13 @@ class Controllers extends Controller
         //return view('index',['data'=>$products]);
         return view('index')->with(compact('products'));
     }
+    function shop(){
+        $manufacture = Manufacture::all();
+        $products = Product::paginate(4);
+        $protype = Protype::all();
+        //return view('index',['data'=>$products]);
+        return view('shop')->with(compact('manufacture'));
+    }
     function get10Product(){
         $productsList = Product::orderBy('id', 'DESC')->get();
         return view('index')->with(compact('productsList'));
