@@ -19,12 +19,18 @@ use App\Http\Controllers\Controllers;
 //     return view($id);
 // });
 
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+
 Route::group(['prefix' => ''], function () {
     Route::get('/', [Controllers::class,'index']);
     Route::get('/shop', [Controllers::class,'shop']);
     Route::get('/add-to-cart/{id}', [Controllers::class,'addCart'])->name('addToCart');
     Route::get('/cart', [Controllers::class,'showCart'])->name('showCart');
     Route::get('/detail/{id}', [Controllers::class,'product'])->name('detail');
+    Route::get('/dashboard', [Controllers::class,'show_dashboard']);
 });
 
 Route::get('/welcome', function () {
@@ -32,7 +38,7 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('/admin/dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

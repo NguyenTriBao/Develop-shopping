@@ -11,16 +11,6 @@ use DB;
 
 class Controllers extends Controller
 {
-
-    function AuthLogin(){
-        $admin_id = Session::get('admin_id');
-        if($admin_id){
-            return Redirect::to('dashboard');
-
-        }else{
-            return Redirect::to('welcome')->send();
-        }
-    }
     function index(){
         $manufacture = Manufacture::all();
         $products = Product::paginate(4);
