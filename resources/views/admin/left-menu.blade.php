@@ -30,6 +30,13 @@
                       <li><a href="{{asset('admin/menu')}}">Danh mục</a></li>
                       <li><a href="index2.html">Tin tức</a></li>
                       <li><a href="{{asset('admin/product')}}">Sản phẩm</a></li>
+                      <li><a href="{{asset('admin/manufacture')}}">Hãng</a></li>
+                      <li><a href="{{asset('admin/protype')}}">Loại</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-user" aria-hidden="true"></i> Management <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{asset('admin/users')}}">Users</a></li>
                     </ul>
                   </li>
                 </ul>

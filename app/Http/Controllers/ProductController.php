@@ -6,6 +6,7 @@ use Image;
 use App\Models\Product;
 use App\Models\Protype;
 use App\Models\Manufacture;
+use App\Models\User;
 
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
@@ -18,14 +19,31 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function product()
     {
-        $manufacture = Manufacture::all();
         $products = Product::orderBy('id', 'DESC')->get();
-        $protype = Protype::all();
         //return view('index',['data'=>$products]);
         return view('/admin/product')->with(compact('products'));
     }
+    public function protype()
+    {
+        $protype = Protype::all();
+        //return view('index',['data'=>$products]);
+        return view('/admin/protype')->with(compact('protype'));
+    }
+    public function manufacture()
+    {
+        $manufacture = Manufacture::all();
+        //return view('index',['data'=>$products]);
+        return view('/admin/manufacture')->with(compact('manufacture'));
+    }
+    public function users()
+    {
+        $user = Users::all();
+        //return view('index',['data'=>$products]);
+        return view('/admin/users')->with(compact('user'));
+    }
+    //Exec product
     public function addproduct(Request $request)
     {
         if($request->ismethod('post')){
@@ -89,6 +107,58 @@ class ProductController extends Controller
     public function deleteProduct($id=null){
         Product::where(['id'=>$id])->delete();
         return redirect()->back()->with('flash_message_success','Product has been delete');
+    }
+    //Exec protype
+    public function addProtype(Request $request){
+        if($request->ismethod('post')){
+            $data = $request->all();
+            //echo "<pre>";print_r($data);die;
+            $protype = new Protype;
+            $protype->type_name = $data['type_name'];
+            $protype->save();
+            return redirect('/admin/add-protype')->with('flash_message_success','Protype has been added successfully!');
+        }
+        return view('admin.add-protype');
+    }
+    public function editProtype(Request $request,$type_id=null)
+    {
+        if($request->ismethod('post')){
+            $data = $request->all();
+            Protype::where(['type_id'=>$type_id])->update(['type_name'=>$data['type_name']]);
+            return redirect()->back()->with('flash_message_success','Protype has been edit');
+        }
+        $protypeDetails = Protype::where(['type_id'=>$type_id])->first();
+        return view('admin.edit-protype')->with(compact('protypeDetails'));
+    }
+    public function deleteProtype($type_id=null){
+        Protype::where(['type_id'=>$type_id])->delete();
+        return redirect()->back()->with('flash_message_success','Protype has been delete');
+    }
+    //Exec manufacture
+    public function addManufacture(Request $request){
+        if($request->ismethod('post')){
+            $data = $request->all();
+            //echo "<pre>";print_r($data);die;
+            $manufacture = new Manufacture;
+            $manufacture->manu_name = $data['manu_name'];
+            $manufacture->save();
+            return redirect('/admin/add-manufacture')->with('flash_message_success','Manufacture has been added successfully!');
+        }
+        return view('admin.add-manufacture');
+    }
+    public function editManufacture(Request $request,$manu_id=null)
+    {
+        if($request->ismethod('post')){
+            $data = $request->all();
+            Manufacture::where(['manu_id'=>$manu_id])->update(['manu_name'=>$data['manu_name']]);
+            return redirect()->back()->with('flash_message_success','Manufacture has been edit');
+        }
+        $manufactureDetails = Manufacture::where(['manu_id'=>$manu_id])->first();
+        return view('admin.edit-manufacture')->with(compact('manufactureDetails'));
+    }
+    public function deleteManufacture($manu_id=null){
+        Manufacture::where(['manu_id'=>$manu_id])->delete();
+        return redirect()->back()->with('flash_message_success','Manufacture has been delete');
     }
 
     /**

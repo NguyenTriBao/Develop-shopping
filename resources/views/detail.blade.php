@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-5 col-md-6">
-                <img src="images/{{$data->image}}" class="img-fluid" alt="Image">
+                <img src="{{asset('images/'.$data->image)}}" class="img-fluid" alt="Image">
                 </div>
                 <div class="col-xl-7 col-lg-7 col-md-6">
                     <div class="single-product-details">
@@ -82,6 +82,60 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row my-5">
+                <div class="col-lg-12">
+                    <div class="contact-form-right">
+                    <h2>PRODUCT REVIEWS</h2>
+                    <form action="" method="post">
+                                {{csrf_field()}}
+                                <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-lg-8 col-sm-12">
+                    <div class="contact-form-right">
+                        @foreach($comments as $value)
+                        <ul>
+                            <li class="com-title">
+                                {{$value->com_name}}
+                                <br>
+                                <span>{{date('d/m/y H:i', strtotime($value->created_at))}}</span>
+                            </li>
+                            <li class="com-detail">
+                            {{$value->com_content}}
+                            </li>
+                        </ul>
+                        @endforeach
+                    </div>
+                </div>
+
             <div class="row my-5">
                 <div class="col-lg-12">
                     <div class="title-all text-center">

@@ -9,9 +9,10 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "dev-master",
         "laravel/framework": "^8.12",
-        "laravel/tinker": "^2.5",
-        "intervention/image": "dev-master"
+        "laravel/sanctum": "^2.15",
+        "laravel/tinker": "^2.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

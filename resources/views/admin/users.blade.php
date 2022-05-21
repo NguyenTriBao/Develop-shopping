@@ -3,7 +3,7 @@
 <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Tables</h3>
+                <h3>Tables <small>Some examples to get you started</small></h3>
               </div>
 
               <div class="title_right">
@@ -24,7 +24,7 @@
               <div class="col-md-12 col-sm-6  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Product</h2>
+                    <h2>Product <small>Bordered table subtitle</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -48,25 +48,16 @@
                         <tr>
                           <th>id</th>
                           <th>Name</th>
-                          <th>Image</th>
-                          <th>Price</th>
-                          <th>Manufacture</th>
-                          <th>Type</th>
-                          <th>Description</th>
+                          <th>Email</th>
                           <th>Delete</th>
                           <th>Edit</th>
                         </tr>
                       </thead>
-                      @foreach ($products as $row)
+                      @foreach ($users as $row)
                       <tbody>
                         <tr>
-                          <th scope="row">{{$row->id}}</th>
-                          <td>{{$row->name}}</td>
-                          <td><img src="../images/{{$row->image}}" class="img-fluid" alt="Image"></td>
-                          <td>{{$row->price}}</td>
-                          <td>{{$row->manufacture->manu_name}}</td>
-                          <td>{{$row->protype->type_name}}</td>
-                          <td>{{$row->description}}</td>
+                          <th scope="row">{{$row->type_id}}</th>
+                          <td>{{$row->type_name}}</td>
                           <td><a href="{{asset('admin/delete-product/'.$row->id)}}"><i class="fa fa-minus-circle" aria-hidden="true"></i></a></td>
                           <td><a href="{{asset('admin/edit-product/'.$row->id)}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
                         </tr>

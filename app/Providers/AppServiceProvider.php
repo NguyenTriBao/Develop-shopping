@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Providers;
+use App\Models\Product;
+use App\Models\Protype;
+use App\Models\Manufacture;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // view()->composer('*',function($view){
+        //     $view->with([
+        //         'protype'=> Protype::with('protype')->where(['type_id'=>0])->get(),
+        //     ]);
+        // });
     }
 }

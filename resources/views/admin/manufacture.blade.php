@@ -24,7 +24,7 @@
               <div class="col-md-12 col-sm-6  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Product</h2>
+                    <h2>Manufacture</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -37,7 +37,7 @@
                       </li>
                       <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
-                      <li><a href="{{asset('admin/add-product')}}" class="btn btn-primary float-end">Thêm sản phẩm</a>
+                      <li><a href="{{asset('admin/add-manufacture')}}" class="btn btn-primary float-end">Thêm hãng</a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -47,28 +47,18 @@
                       <thead>
                         <tr>
                           <th>id</th>
-                          <th>Name</th>
-                          <th>Image</th>
-                          <th>Price</th>
-                          <th>Manufacture</th>
-                          <th>Type</th>
-                          <th>Description</th>
+                          <th>Manufacture_name</th>
                           <th>Delete</th>
                           <th>Edit</th>
                         </tr>
                       </thead>
-                      @foreach ($products as $row)
+                      @foreach ($manufacture as $row)
                       <tbody>
                         <tr>
-                          <th scope="row">{{$row->id}}</th>
-                          <td>{{$row->name}}</td>
-                          <td><img src="../images/{{$row->image}}" class="img-fluid" alt="Image"></td>
-                          <td>{{$row->price}}</td>
-                          <td>{{$row->manufacture->manu_name}}</td>
-                          <td>{{$row->protype->type_name}}</td>
-                          <td>{{$row->description}}</td>
-                          <td><a href="{{asset('admin/delete-product/'.$row->id)}}"><i class="fa fa-minus-circle" aria-hidden="true"></i></a></td>
-                          <td><a href="{{asset('admin/edit-product/'.$row->id)}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
+                          <th scope="row">{{$row->manu_id}}</th>
+                          <td>{{$row->manu_name}}</td>
+                          <td><a href="{{asset('admin/delete-manufacture/'.$row->manu_id)}}"><i class="fa fa-minus-circle" aria-hidden="true"></i></a></td>
+                          <td><a href="{{asset('admin/edit-manufacture/'.$row->manu_id)}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
                         </tr>
                       </tbody>
                       @endforeach

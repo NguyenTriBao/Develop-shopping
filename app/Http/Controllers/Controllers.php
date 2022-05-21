@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Comments;
 use App\Models\Product;
 use App\Models\Protype;
 use App\Models\Manufacture;
@@ -14,21 +15,49 @@ class Controllers extends Controller
     function index(){
         $manufacture = Manufacture::all();
         $products = Product::paginate(4);
+        $productsList = Product::orderBy('id', 'DESC')->get();
         $protype = Protype::all();
-        //return view('index',['data'=>$products]);
-        return view('index')->with(compact('products'));
+        return view('index')->with(compact('products','productsList'));
     }
-    function shop(){
+    function protype(){
         $manufacture = Manufacture::all();
-        $products = Product::all();
+        $product = Product::all();
         $protype = Protype::all();
-        //return view('index',['data'=>$products]);
-        return view('shop',
-        [
-            'product'=>$products,
-            'manufacture'=>$manufacture
-        ]);
+        return view('shop')->with(compact('protype','manufacture','product'));
     }
+    function category($type_id){
+        $category = Protype::find($type_id);
+        $manufacture = Manufacture::all();
+        $protype = Protype::all();
+        $product = Product::where('type_id',$type_id)->get();
+        return view('category')->with(compact('product','protype','manufacture','category'));
+    }
+    function manufacture($manu_id){
+        $category = Manufacture::find($manu_id);
+        $manufacture = Manufacture::all();
+        $protype = Protype::all();
+        $product = Product::where('manu_id',$manu_id)->get();
+        return view('manufacture')->with(compact('product','protype','manufacture','category'));
+    }
+    function search(Request $request){
+        $manufacture = Manufacture::all();
+        $protype = Protype::all();
+        $keywords = $request->keywords_submit;
+        $product = Product::where('name','like','%' .$keywords. '%')->paginate(1);
+        $product->appends($request->all());
+        return view('search')->with(compact('protype','manufacture','product'));
+    }
+    // function shop(){
+    //     $manufacture = Manufacture::all();
+    //     $products = Product::all();
+    //     $protype = Protype::all();
+    //     //return view('index',['data'=>$products]);
+    //     return view('shop',
+    //     [
+    //         'product'=>$products,
+    //         'manufacture'=>$manufacture
+    //     ]);
+    // }
     // function shop(){
     //     $manufacture = Manufacture::all();
     //     $products = Product::paginate(4);
@@ -77,8 +106,18 @@ class Controllers extends Controller
     public function insertform(){
         return view('insert');
     }
-    public function product(Product $id){
-        $data = $id;
-        return view('detail', compact(['data']));
+    public function product($id){
+        $data = Product::find($id);
+        $comments = Comments::where('com_product',$id)->get();
+        return view('detail', compact(['data','comments']));
+    }
+    public function comments(Request $request, $id){
+        $comments = new Comments;
+        $comments->com_name = $request->name;
+        $comments->com_email = $request->email;
+        $comments->com_content = $request->message;
+        $comments->com_product = $id;
+        $comments->save();
+        return back();
     }
 }

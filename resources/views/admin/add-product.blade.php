@@ -24,7 +24,7 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Form validation <small>sub title</small></h2>
+                                    <h2>Form validation</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -44,9 +44,7 @@
                                 <div class="x_content">
                                     <form class="" enctype="multipart/form-data" action="{{asset('admin/add-product')}}" method="post" novalidate>
                                         {{csrf_field()}}
-                                        <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a>
-                                        </p>
-                                        <span class="section">Personal Info</span>
+                                        <span class="section">Add Product</span>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Name<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
@@ -69,9 +67,9 @@
                                                 <input class="form-control" type="email" class='email' name="manu_id" id="manu_id" data-validate-linked='email' required='required' /></div>
                                         </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Type_id <span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Type_id<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" type="number" class='number' name="type_id" id="type_id" data-validate-minmax="10,100" required='required'></div>
+                                                <input class="form-control" type="email" class='email' name="type_id" id="type_id" data-validate-linked='email' required='required' /></div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Quantity <span class="required">*</span></label>
