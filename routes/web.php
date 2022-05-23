@@ -17,10 +17,12 @@ use App\Http\Controllers\ProductController;
 */
 
 
-// Route::get('/{id}', function ($id) {
-//     return view($id);
-// });
-
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
 Route::get('/admin/product', function () {
     return view('/admin/product');
 });
