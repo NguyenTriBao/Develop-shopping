@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('protypes')->insert([
-            ['type_name' => 'Áo'],
-            ['type_name' => 'Quần'],
-            ['type_name' => 'Ví'],
-            ['type_name' => 'Giày'],
-            ['type_name' => 'Giỏ xách']
+            ['type_name' => 'Áo','type_image' => 'Wooldouble-breastedjacket.jpg'],
+            ['type_name' => 'Quần','type_image' => '15242358339.jpg_resize400x400.jpg'],
+            ['type_name' => 'Ví','type_image' => 'SLENDERWALLET.jpg'],
+            ['type_name' => 'Giày','type_image' => 'giaygucci.jpg'],
+            ['type_name' => 'Giỏ xách','type_image' => 'tui-xach-chanel-coco-den-size-225-0-560.jpg']
         ]);
         DB::table('manufactures')->insert([
             ['manu_name' => 'Gucci'],

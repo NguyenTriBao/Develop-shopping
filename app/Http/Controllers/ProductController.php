@@ -30,6 +30,7 @@ class ProductController extends Controller
         $protype = Protype::all();
         //return view('index',['data'=>$products]);
         return view('/admin/protype')->with(compact('protype'));
+        
     }
     public function manufacture()
     {

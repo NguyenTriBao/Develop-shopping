@@ -17,7 +17,7 @@ class Controllers extends Controller
         $products = Product::paginate(4);
         $productsList = Product::orderBy('id', 'DESC')->get();
         $protype = Protype::all();
-        return view('index')->with(compact('products','productsList'));
+        return view('index')->with(compact('products','productsList','protype'));
     }
     function protype(){
         $manufacture = Manufacture::all();
@@ -25,6 +25,7 @@ class Controllers extends Controller
         $protype = Protype::all();
         return view('shop')->with(compact('protype','manufacture','product'));
     }
+
     function category($type_id){
         $category = Protype::find($type_id);
         $manufacture = Manufacture::all();
