@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('manu_id');
             $table->integer('type_id');
             $table->integer('quantity');
-            $table->string('description');
+            $table->longText('description');
             $table->timestamps();  
         });
     }
