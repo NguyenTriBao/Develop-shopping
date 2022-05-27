@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(LaratrustSeeder::class);
+        
         DB::table('protypes')->insert([
             ['type_name' => 'Áo','type_image' => 'Wooldouble-breastedjacket.jpg'],
             ['type_name' => 'Quần','type_image' => '15242358339.jpg_resize400x400.jpg'],

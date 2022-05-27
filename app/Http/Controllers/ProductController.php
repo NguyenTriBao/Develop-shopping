@@ -113,9 +113,21 @@ class ProductController extends Controller
     public function addProtype(Request $request){
         if($request->ismethod('post')){
             $data = $request->all();
-            //echo "<pre>";print_r($data);die;
             $protype = new Protype;
             $protype->type_name = $data['type_name'];
+            //Upload image
+            if($request->hasfile('type_image')){
+                echo $img_tmp= $request->file('type_image');
+                if($img_tmp->isVaLid()){
+                    $extension = $img_tmp->getClientOriginalExtension();
+                $filename = rand(111,9999).".".$extension;
+                $img_path = 'images/'.$filename;
+                
+                //image resize
+                Image::make($img_tmp)->resize(500,500)->save($img_path);
+                $protype->type_image = $filename;
+                }
+            }
             $protype->save();
             return redirect('/admin/add-protype')->with('flash_message_success','Protype has been added successfully!');
         }
@@ -125,7 +137,21 @@ class ProductController extends Controller
     {
         if($request->ismethod('post')){
             $data = $request->all();
-            Protype::where(['type_id'=>$type_id])->update(['type_name'=>$data['type_name']]);
+            if($request->hasfile('type_image')){
+                echo $img_tmp= $request->file('type_image');
+                if($img_tmp->isVaLid()){
+                    $extension = $img_tmp->getClientOriginalExtension();
+                $filename = rand(111,9999).".".$extension;
+                $img_path = 'images/'.$filename;
+                
+                //image resize
+                Image::make($img_tmp)->resize(500,500)->save($img_path);
+                $protype->type_image = $filename;
+                }
+            }else{
+                $filename = $data['current_image'];
+            }
+            Protype::where(['type_id'=>$type_id])->update(['type_name'=>$data['type_name'],'type_image'=>$filename]);
             return redirect()->back()->with('flash_message_success','Protype has been edit');
         }
         $protypeDetails = Protype::where(['type_id'=>$type_id])->first();

@@ -44,7 +44,7 @@ Route::group(['prefix' => ''], function () {
     Route::get('/cart', [Controllers::class,'showCart'])->name('showCart');
     Route::get('/detail/{id}', [Controllers::class,'product'])->name('detail');
     Route::post('/detail/{id}', [Controllers::class,'comments'])->name('comments');
-    Route::get('/dashboard', [Controllers::class,'show_dashboard']);
+    //Route::get('/dashboard', [Controllers::class,'show_dashboard']);
     Route::get('/admin/product', [ProductController::class,'product'])->name('product');
     Route::get('/admin/protype', [ProductController::class,'protype'])->name('protype');
     Route::get('/admin/manufacture', [ProductController::class,'manufacture'])->name('manufacture');
@@ -72,24 +72,18 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('/admin/dashboard');
-})->middleware(['auth'])->name('dashboard');
+//auth route for both 
+Route::group(['middleware' => ['auth']], function() { 
+    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+});
+
+// Route::get('/dashboard', function () {
+//     return view('/admin/dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 // Route::get('/product', function () {
 //     return view('/admin/product');
 // })->middleware(['auth'])->name('product');
-
-// //USER DASHBOARD
-// Route::get('/', function () {
-//     return view('index');
-// })->middleware(['auth', 'user'])->name('dashboard');
-
-
-// // ADMIN DASHBOARD
-// Route::get('/admin_dashboard', function () {
-//     return view('/admin/dashboard');
-// })->middleware(['auth', 'admin'])->name('admin_dashboard');
 
 
 require __DIR__.'/auth.php';

@@ -51,6 +51,16 @@
                                                 <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="type_name" id="type_name" value="{{$protypeDetails->type_name}}" placeholder="ex. John f. Kennedy" required="required" />
                                             </div>
                                         </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Picture upload</label>
+                                            <div class="col-md-6 col-sm-6">
+                                            <input type="file" name="type_image">
+                                            <input type="hidden" name="current_image" value="{{$protypeDetails->type_image}}">
+                                        @if(!empty($protypeDetails->type_image))
+                                        <img style="width:100px;margin-top:10px;" src="{{asset('images/'.$protypeDetails->type_image)}}">
+                                        @endif
+                                        </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

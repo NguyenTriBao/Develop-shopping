@@ -140,7 +140,8 @@
 						<i class="fa fa-shopping-bag"></i>
                             <span class="badge">3</span>
                             
-					</a></li>
+					    </li>
+                        <a class="dropdown-item"  href="{{ url('/logout') }}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
