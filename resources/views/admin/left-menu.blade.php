@@ -32,6 +32,7 @@
                       <li><a href="{{asset('admin/product')}}">Sản phẩm</a></li>
                       <li><a href="{{asset('admin/manufacture')}}">Hãng</a></li>
                       <li><a href="{{asset('admin/protype')}}">Loại</a></li>
+                      <li><a href="{{asset('admin/comments')}}">Bình luận</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-user" aria-hidden="true"></i> Management <span class="fa fa-chevron-down"></span></a>

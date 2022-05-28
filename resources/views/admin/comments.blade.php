@@ -46,23 +46,23 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>id</th>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Password</th>
+                          <th>Com_id</th>
+                          <th>Com_name</th>
+                          <th>Com_email</th>
+                          <th>Com_content</th>
+                          <th>Com_product</th>
                           <th>Delete</th>
-                          <th>Edit</th>
                         </tr>
                       </thead>
-                      @foreach ($user as $row)
+                      @foreach ($comments as $row)
                       <tbody>
                         <tr>
-                          <th scope="row">{{$row->id}}</th>
-                          <td>{{$row->name}}</td>
-                          <td>{{$row->email}}</td>
-                          <td>{{$row->password}}</td>
-                          <td><a href="{{asset('admin/delete-user/'.$row->id)}}"><i class="fa fa-minus-circle" aria-hidden="true"></i></a></td>
-                          <td><a href="{{asset('admin/edit-product/'.$row->id)}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
+                          <th scope="row">{{$row->com_id}}</th>
+                          <td>{{$row->com_name}}</td>
+                          <td>{{$row->com_email}}</td>
+                          <td>{{$row->com_content}}</td>
+                          <td>{{$row->com_product}}</td>
+                          <td><a href="{{asset('admin/delete-comment/'.$row->com_id)}}"><i class="fa fa-minus-circle" aria-hidden="true"></i></a></td>
                         </tr>
                       </tbody>
                       @endforeach

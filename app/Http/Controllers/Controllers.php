@@ -44,7 +44,7 @@ class Controllers extends Controller
         $manufacture = Manufacture::all();
         $protype = Protype::all();
         $keywords = $request->keywords_submit;
-        $product = Product::where('name','like','%' .$keywords. '%')->paginate(1);
+        $product = Product::where('name','like','%' .$keywords. '%')->paginate(3);
         $product->appends($request->all());
         return view('search')->with(compact('protype','manufacture','product'));
     }
@@ -109,20 +109,10 @@ class Controllers extends Controller
     }
     public function product($id){
         $data = Product::find($id);
-        // $theloai = DB::table('protypes')->where('type_id')->orderby('type_id','desc')->get();
-        // $min = $id->price-9024400;
-        // $max = $id->price+9024400;
-        // $manu_id = $id->manu_id;
-        // $type_id = $id->type_id;
-        // $relationship = DB::table('products')->where('price','<',$max)->orderby('price','>',$min)
-        // ->where('manu_id','=',$manu_id)
-        // ->orWhere('type_id','=',$type_id)
-        // ->orWhere('name','like','%'.$id->description.'%')
-        // ->orWhere('name','like','%'.$id->name.'%')
-        // ->limit(16)
-        // ->get();
         $comments = Comments::where('com_product',$id)->get();
-        return view('detail', compact(['data','comments']));
+        $type_id = $data->type_id;
+        $related_products = Product::where('type_id',$type_id)->limit(4)->get();
+        return view('detail', compact(['data','comments','related_products']));
     }
     public function comments(Request $request, $id){
         $comments = new Comments;

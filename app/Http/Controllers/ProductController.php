@@ -6,6 +6,7 @@ use Image;
 use App\Models\Product;
 use App\Models\Protype;
 use App\Models\Manufacture;
+use App\Models\Comments;
 use App\Models\User;
 
 use Illuminate\Support\Facades\Input;
@@ -22,25 +23,27 @@ class ProductController extends Controller
     public function product()
     {
         $products = Product::orderBy('id', 'DESC')->get();
-        //return view('index',['data'=>$products]);
         return view('/admin/product')->with(compact('products'));
     }
     public function protype()
     {
         $protype = Protype::all();
-        //return view('index',['data'=>$products]);
         return view('/admin/protype')->with(compact('protype'));
         
     }
     public function manufacture()
     {
         $manufacture = Manufacture::all();
-        //return view('index',['data'=>$products]);
         return view('/admin/manufacture')->with(compact('manufacture'));
+    }
+    public function comment()
+    {
+        $comments = Comments::all();
+        return view('/admin/comments')->with(compact('comments'));
     }
     public function users()
     {
-        $user = Users::all();
+        $user = User::all();
         //return view('index',['data'=>$products]);
         return view('/admin/users')->with(compact('user'));
     }
@@ -186,6 +189,16 @@ class ProductController extends Controller
     public function deleteManufacture($manu_id=null){
         Manufacture::where(['manu_id'=>$manu_id])->delete();
         return redirect()->back()->with('flash_message_success','Manufacture has been delete');
+    }
+    //Exec comment
+    public function deleteComment($com_id=null){
+        Comments::where(['com_id'=>$com_id])->delete();
+        return redirect()->back()->with('flash_message_success','Comment has been delete');
+    }
+    //Exec user
+    public function deleteUser($id=null){
+        User::where(['id'=>$id])->delete();
+        return redirect()->back()->with('flash_message_success','User has been delete');
     }
 
     /**

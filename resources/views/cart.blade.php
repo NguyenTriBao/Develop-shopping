@@ -48,7 +48,7 @@
                                 $total += $row['price'] * $row['quantity'];
                                 @endphp
                                 <tr>
-                                    <td class="thumbnail-img">{{$row['image']}}</td>
+                                    <td class="thumbnail-img"><img src="{{asset('images/'.$row['image'])}}" alt=""></td>
                                     <td>{{$row['name']}}</td>
                                     <td>{{$row['price']}}</td>
                                     <td><input type="number" size="4" value="{{ number_format($row['quantity']).'VND'}}" min="1" step="1" class="c-input-text qty text"></td>

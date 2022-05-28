@@ -48,6 +48,7 @@
                         <tr>
                           <th>id</th>
                           <th>Type_name</th>
+                          <th>Type_image</th>
                           <th>Delete</th>
                           <th>Edit</th>
                         </tr>
@@ -57,6 +58,7 @@
                         <tr>
                           <th scope="row">{{$row->type_id}}</th>
                           <td>{{$row->type_name}}</td>
+                          <td><img src="../images/{{$row->type_image}}" width="200" height="200" class="img-fluid" alt="Image"></td>
                           <td><a href="{{asset('admin/delete-protype/'.$row->type_id)}}"><i class="fa fa-minus-circle" aria-hidden="true"></i></a></td>
                           <td><a href="{{asset('admin/edit-protype/'.$row->type_id)}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
                         </tr>

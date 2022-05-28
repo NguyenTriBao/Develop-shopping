@@ -68,6 +68,13 @@ Route::match(['get','post'],'/admin/add-manufacture',[ProductController::class ,
 Route::match(['get','post'],'/admin/edit-manufacture/{manu_id}',[ProductController::class ,'editManufacture']);
 Route::match(['get','post'],'/admin/delete-manufacture/{manu_id}',[ProductController::class ,'deleteManufacture']);
 
+//Comment
+Route::get('/admin/comments', [ProductController::class,'comment'])->name('comment');
+Route::match(['get','post'],'/admin/delete-comment/{com_id}',[ProductController::class ,'deleteComment']);
+
+//User
+Route::match(['get','post'],'/admin/delete-user/{id}',[ProductController::class ,'deleteUser']);
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
