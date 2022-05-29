@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master-user')
 @section('content')
 
 <body>
@@ -62,7 +62,7 @@
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
                                         <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a>
-                                        <a class="btn hvr-hover add_to_cart" data-url="{{route('addToCart',['id' => $data->id])}}" data-fancybox-close="" href="#">Add to cart</a>
+                                        <a class="btn hvr-hover" data-fancybox-close="" href="{{asset('welcome')}}">Add to cart</a>
                                     </div>
                                 </div>
 

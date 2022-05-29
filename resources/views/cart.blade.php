@@ -11,7 +11,7 @@
                 <div class="col-lg-12">
                     <h2>Cart</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                        <li class="breadcrumb-item"><a href="{{asset('dashboard')}}">Shop</a></li>
                         <li class="breadcrumb-item active">Cart</li>
                     </ul>
                 </div>
@@ -51,7 +51,7 @@
                                     <td class="thumbnail-img"><img src="{{asset('images/'.$row['image'])}}" alt=""></td>
                                     <td>{{$row['name']}}</td>
                                     <td>{{$row['price']}}</td>
-                                    <td><input type="number" size="4" value="{{ number_format($row['quantity']).'VND'}}" min="1" step="1" class="c-input-text qty text"></td>
+                                    <td><input type="number" size="4" value="{{$row['quantity']}}" min="1" step="1" class="c-input-text qty text"></td>
                                     <td><p>{{ number_format($row['price'] * $row['quantity']).'VND'}}</p></td>
                                     <td><a href="#"><i class="fas fa-times"></i></a></td>
                                 </tr>

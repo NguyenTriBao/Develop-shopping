@@ -102,7 +102,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item"><a class="nav-link" href="{{asset('')}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{asset('dashboard')}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{asset('about')}}">About Us</a></li>
                         
                         <li class="dropdown">
@@ -112,7 +112,7 @@
                                 <li><a href="{{asset('checkout')}}">Checkout</a></li>
                                 <li><a href="{{asset('my-account')}}">My Account</a></li>
                                 <li><a href="{{asset('wishlist')}}">Wishlist</a></li>
-                                <li><a href="{{asset('detail')}}">Shop Detail</a></li>
+                                <li><a href="{{asset('shop')}}">Shop Detail</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{asset('contact')}}">Contact Us</a></li>

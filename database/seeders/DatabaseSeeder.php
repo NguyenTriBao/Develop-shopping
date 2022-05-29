@@ -156,15 +156,23 @@ class DatabaseSeeder extends Seeder
             'quantity' => '1',
             'description' => 'Xa xỉ, đẳng cấp, thời thượng và đắt đỏ là những mỹ từ dành cho thương hiệu thời trang đình đám thế giới Louis Vuitton (LV).'],
         ]);
-        // DB::table('role_user')->insert([
-        //     ['name' => 'tvh',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => '123456ty'],
-        // ]);
-        // DB::table('users')->insert([
-        //     ['name' => 'tvh',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => '123456ty'],
-        // ]);
+        DB::table('role_user')->insert([
+            ['role_id' => '1',
+            'user_id' => '1',
+            'user_type'=>'App\Models\User'],
+
+            ['role_id' => '2',
+            'user_id' => '2',
+            'user_type'=>'App\Models\User'],
+        ]);
+        DB::table('users')->insert([
+            ['name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => '$2y$10$5rGDc6kYs14aTtFZQ/nTF.PFSZ4GYlNG8AuUN8pCuL6RIfNM2qk1m'],
+
+            ['name' => 'user',
+            'email' => 'user@gmail.com',
+            'password' => '$2y$10$/HsaHfb//cCEZ0qcc1Q5mucooyBpPq.aMQRKT8BID4uGzjZqjb2Yq'],
+        ]);
     }
 }

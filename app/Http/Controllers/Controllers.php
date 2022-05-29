@@ -114,6 +114,13 @@ class Controllers extends Controller
         $related_products = Product::where('type_id',$type_id)->limit(4)->get();
         return view('detail', compact(['data','comments','related_products']));
     }
+    public function product2($id){
+        $data = Product::find($id);
+        $comments = Comments::where('com_product',$id)->get();
+        $type_id = $data->type_id;
+        $related_products = Product::where('type_id',$type_id)->limit(4)->get();
+        return view('detail2', compact(['data','comments','related_products']));
+    }
     public function comments(Request $request, $id){
         $comments = new Comments;
         $comments->com_name = $request->name;

@@ -16,7 +16,12 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-
+Route::get('/wishlist', function () {
+    return view('wishlist');
+});
+Route::get('/checkout', function () {
+    return view('checkout');
+});
 Route::get('/about', function () {
     return view('about');
 });
@@ -46,6 +51,7 @@ Route::group(['prefix' => ''], function () {
     Route::get('/add-to-cart/{id}', [Controllers::class,'addCart'])->name('addToCart');
     Route::get('/cart', [Controllers::class,'showCart'])->name('showCart');
     Route::get('/detail/{id}', [Controllers::class,'product'])->name('detail');
+    Route::get('/detail2/{id}', [Controllers::class,'product2'])->name('detail2');
     Route::post('/detail/{id}', [Controllers::class,'comments'])->name('comments');
     //Route::get('/dashboard', [Controllers::class,'show_dashboard']);
     Route::get('/admin/product', [ProductController::class,'product'])->name('product');
