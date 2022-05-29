@@ -75,15 +75,6 @@ class DatabaseSeeder extends Seeder
             'quantity' => '1',
             'description' => 'Ví limited'],
 
-
-            ['name' => 'Áo Polo',
-            'image' => 'Aopolo.img',
-            'price' => '100000',
-            'manu_id' => '1',
-            'type_id' => '1',
-            'quantity' => '2',
-            'description' => 'Áo polo rất đẹp'],
-
             ['name' => 'Giày nam Gucci Ace họa tiết kẻ xanh sẫm GNGC13',
             'image' => 'giaygucci.jpg',
             'price' => '2190000',

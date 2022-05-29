@@ -23,6 +23,9 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/my-account', function () {
+    return view('my-account');
+});
 Route::get('/admin/product', function () {
     return view('/admin/product');
 });
@@ -37,7 +40,7 @@ Route::get('/admin', function () {
 
 
 Route::group(['prefix' => ''], function () {
-    Route::get('/', [Controllers::class,'index']);
+    Route::get('/index', [Controllers::class,'index']);
     Route::get('/tim-kiem', [Controllers::class,'search']);
     Route::get('/shop', [Controllers::class,'protype'])->name('protype');
     Route::get('/add-to-cart/{id}', [Controllers::class,'addCart'])->name('addToCart');

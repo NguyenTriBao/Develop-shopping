@@ -74,9 +74,21 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="custom-select-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+						<option>¥ JPY</option>
+						<option>$ USD</option>
+						<option>€ EUR</option>
+					</select>
+                    </div>
+                    <div class="right-phone-box">
+                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
+                    </div>
                     <div class="our-link">
                         <ul>
-                            <li style="color: white;">Welcome, {{ Auth::user()->name }}</li>
+                            <li><a href="{{asset('my-account')}}">My Account</a></li>
+                            <li><a href="#">Our location</a></li>
+                            <li><a href="{{asset('contact')}}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -116,7 +128,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{asset('contact')}}">Contact Us</a></li>
-                        <li><a class="nav-link"  href="{{ url('/logout') }}"> Log Out</a></li>
+                        <li><a class="nav-link"  href="{{asset('welcome')}}"> Log In</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
